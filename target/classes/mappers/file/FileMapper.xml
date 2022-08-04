@@ -22,4 +22,12 @@
 		delete from file_image where id = #{id}
 	</delete>
 	
+	<select id="getOneDate" resultMap="file">
+		select * from file_image where id = #{id}
+	</select>
+	
+	<update id="modify">
+		update file_image set name = #{name}, img_name = #{imgName} where id = #{id}
+	</update>
+	
 </mapper>

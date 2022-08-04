@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,6 +62,29 @@ public class FileController {
 		fs.delete(file, id);
 		
 		return "redirect:views";
+	}
+	
+	@GetMapping("modify_form")
+	public String modify_form(String id, Model model) {
+		fs.getOneData(id, model);
+		return "modify_form";
+	}
+	
+	@PostMapping("modify")
+	public String modify(MultipartHttpServletRequest mul) {
+		fs.modify(mul);
+		return "redirect:views";
+	}
+	
+	@GetMapping("form02")
+	public String form02() {
+		return "form02";
+	}
+	
+	@PostMapping("upload2")
+	public String upload2(MultipartHttpServletRequest mul) {
+		fs.fileProcess02(mul);
+		return "redirect:form02";
 	}
 
 }

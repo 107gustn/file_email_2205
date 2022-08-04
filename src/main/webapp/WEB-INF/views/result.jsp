@@ -17,7 +17,7 @@
 		
 		<a href="download?file=${dto.imgName }">${dto.imgName }</a> <!-- a태그를 이용하여 다운로드 받음 -->
 		<a href="delete?file=${dto.imgName }&id=${dto.id }">파일 삭제</a>
-		
+		<a href="modify_form?id=${dto.id }">수정</a>
 		<hr>
 	</c:forEach>
 	<a href="form">업로드 이동</a>

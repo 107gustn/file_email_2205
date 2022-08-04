@@ -8,4 +8,9 @@ public interface FileService {
 	public void fileProcess(MultipartHttpServletRequest mul);
 	public void getData(Model model);
 	public void delete(String file, String id);
+	
+	public void getOneData(String id, Model model);
+	public void modify(MultipartHttpServletRequest mul);
+	
+	public void fileProcess02(MultipartHttpServletRequest mul);
 }

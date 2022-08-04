@@ -8,4 +8,7 @@ public interface FileMapper {
 	public void saveData( FileDTO dto );
 	public List<FileDTO> getData();
 	public int delete(String id);
+	
+	public FileDTO getOneDate(String id);
+	public void modify(FileDTO dto);
 }
